@@ -1,0 +1,20 @@
+apiVersion: "stable.example.com/v1"
+kind: CronTab
+metadata:
+  name: with-keys
+spec:
+  cronSpec: "* * * * */5"
+  images:
+  - name: image1
+    tag: latest
+  - name: image2
+    tag: "1.2"
+  - name: image3
+    tag: "1.2"
+  - name: image4
+    tag: "123"
+
+# spec:
+#   images:
+#   - name: image1
+#     tag: new-tag

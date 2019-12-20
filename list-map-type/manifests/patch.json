@@ -1,0 +1,36 @@
+curl -k -v -XPATCH \
+  -H "Content-Type: application/apply-patch+yaml" \
+  -H "Accept: application/json" \
+  -d '[{"op":"add","path":"/spec/images/-","value":{"name":"foo2","tag":"bar2"}}]' \
+  'http://127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/with-keys?fieldManager=kubectl&force=false'
+
+  curl -k -v -XPATCH \
+    -H "Content-Type: application/apply-patch+yaml" \
+    -d '@/tmp/payload' \
+    'http://127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/with-keys?fieldManager=kubectl&force=false'
+
+
+    curl -k -v -XPATCH \
+      -H "Content-Type: application/apply-patch+yaml" \
+      -d '@/tmp/payload2' \
+      'http://127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/are-strings-different?fieldManager=kubectl&force=false'
+
+
+- op: add
+  path: /spec/images/-
+  value:
+    name: foo
+    tag: barbarbar
+
+
+
+- op: add
+  path: /spec/images/-
+  value: new-image
+
+{"apiVersion":"stable.example.com/v1","kind":"CronTab","metadata":{"name":"with-keys","namespace":"default"},"spec":{"cronSpec":"* * * * */5","images":[{"name":"image1","tag":"latest"},{"name":"image2","tag":"1.2"},{"name":"image3","tag":"1.2"},{"name":"image4","tag":"123"}]}}
+
+curl -k -v -XPATCH \
+  -H "Content-Type: application/merge-patch+json"
+  -d '{"spec":{"images":[{"name":"foo","tag":"bazz"}]}}' \
+    'http://127.0.0.1:8080/apis/stable.example.com/v1/namespaces/default/crontabs/with-keys?fieldManager=kubectl&force=false'

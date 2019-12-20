@@ -1,0 +1,8 @@
+apiVersion: "colours.example.com/v1" #change per CRD?
+kind: AssociativeSet #change per CRD
+metadata:
+  name: simple-colour-set
+spec:
+  colours:
+  - black
+  - orange
