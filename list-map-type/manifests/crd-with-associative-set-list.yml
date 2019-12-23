@@ -22,9 +22,16 @@ spec:
               properties:
                 colours:
                   type: array
-                  x-kubernetes-list-type: atomic
+                  x-kubernetes-list-type: map
+                  x-kubernetes-list-map-keys:
+                  - name
                   items:
-                    type: string
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      hue:
+                        type: string
                 replicas:
                   type: integer
   # either Namespaced or Cluster
