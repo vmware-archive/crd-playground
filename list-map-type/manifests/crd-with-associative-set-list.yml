@@ -32,6 +32,9 @@ spec:
                         type: string
                       hue:
                         type: string
+                        default: verydeep
+                    #   shimmer:
+                    #     type: string
                 replicas:
                   type: integer
   # either Namespaced or Cluster

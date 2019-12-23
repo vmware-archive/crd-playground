@@ -4,5 +4,4 @@ metadata:
   name: simple-colour-set
 spec:
   colours:
-  - black
-  - orange
+  - yellow

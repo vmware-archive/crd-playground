@@ -1,0 +1,10 @@
+apiVersion: "colours.example.com/v1" #change per CRD?
+kind:       AssociativeSet #change per CRD
+metadata:
+  name: greens
+spec:
+  colours: []
+  # - sage
+  # - lime
+  # - emerald
+  # - olive

@@ -1,0 +1,15 @@
+apiVersion: "colours.example.com/v1" #change per CRD?
+kind:       AssociativeSet #change per CRD
+metadata:
+  name:     yellows
+spec:
+  colours:
+  - name:   yellow
+    hue:    deep
+  #   # shimmer: mild
+  # - name:   mustard
+  #   hue:    light
+  #   # shimmer: none
+  # - name: canary
+  #   hue: medium
+  #   shimmer: natural
