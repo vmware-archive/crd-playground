@@ -1,5 +1,5 @@
 apiVersion: "colours.example.com/v1" #change per CRD?
-kind:       AssociativeSet #change per CRD
+kind:       ColourList #change per CRD
 metadata:
   name:     blue-colour-set
 spec:

@@ -1,0 +1,9 @@
+apiVersion: "colours.example.com/v1" #change per CRD?
+kind:       ColourMap #change per CRD
+metadata:
+  name:     blue-map
+spec:
+  colour:
+    name:   turquoise
+    hue:    strong
+    saturation: strong
